@@ -3,3 +3,24 @@
 ?>
 <label><?= __("Data retrieved from Block is ") ?></label>
 <h1><?= $block->getText() ?></h1>
+
+<!-- <?php
+/* @var Codilar\HelloWorld\Block\Hello $block */
+?> -->
+<div data-bind="scope: 'knockout-tutorial'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "knockout-tutorial": {
+                        "component": "Test_HelloWorld/js/viewModel",
+                        "template" : "Test_HelloWorld/template"
+                    }
+                }
+            }
+        }
+    }
+</script>
