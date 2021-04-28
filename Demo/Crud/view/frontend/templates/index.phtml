@@ -1,0 +1,42 @@
+<style>
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  border-color: blue;
+}
+</style>
+<table >
+     <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>University</th>
+          <th>Branch</th>
+          <th>Interests</th>
+          <th>Roll Number</th>
+          <th>Image</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th colspan="2">Action</th>
+     </tr>
+ 
+     <?php
+          $collection = $block->getResult();
+          foreach($collection as $item){
+     ?>
+     <tr>
+          <td><?php echo $item->getData('post_id'); ?></td>
+          <td><?php echo $item->getData('name'); ?></td>
+          <td><?php echo $item->getData('university'); ?></td>
+          <td><?php echo $item->getData('branch'); ?></td>
+          <td><?php echo $item->getData('interests'); ?></td>
+          <td><?php echo $item->getData('roll_number'); ?></td>
+          <td><?php echo $item->getData('featured_image'); ?></td>
+          <td><?php echo $item->getData('created_at'); ?></td>
+          <td><?php echo $item->getData('updated_at'); ?></td>
+          <td><a href="<?php echo $block->getUrl('crud/index/edit').'id/'.$item->getData('post_id'); ?>" class="action primary">Edit</a></td>
+          <td><a href="<?php echo $block->getUrl('crud/index/delete').'id/'.$item->getData('post_id'); ?>" class="action primary">Delete</a></td>
+     </tr>
+     <?php } ?>
+     <a class="action primary" href="<?php echo $block->getUrl('crud/index/insert');?>">Add Record</a>&nbsp;
+    
+</table>

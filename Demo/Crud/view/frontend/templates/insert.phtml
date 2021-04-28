@@ -1,0 +1,24 @@
+
+<form method="post" action="<?=$block->getUrl('crud/index/save')?>">
+	
+    <label>Name</label>
+    <input type="hidden" name="id">
+    <input type="text" name="name" value="" >
+    <br>
+    <label>University</label>
+    <input type="text" name="university" value="" >
+    <br>
+    <label>Branch</label>
+    <input type="text" name="branch" value="" >
+      <br>
+      <label>Interests</label>
+      <input type="text" name="interests" value="" >
+    <br>
+    <label>Roll Number</label>
+    <input type="number" name="roll_number" value="" >
+    <br>
+    <label>Image</label>
+    <input type="file" name="featured_image" value="" >
+    <br><br>
+<input type="submit" name="submit" value="Submit">
+</form>

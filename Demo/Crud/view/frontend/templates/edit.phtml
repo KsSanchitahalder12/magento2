@@ -1,0 +1,31 @@
+<?php
+$id = $this->getRequest()->getParam('id');
+if ($id) {
+	$result=$block->getEditRecord($id);
+}
+?>
+
+<form method="post" action="<?=$block->getUrl('crud/index/save')?>">
+	
+		<label>Name</label>
+		<input type="hidden" name="id" value="<?php echo $result['post_id'];?>">
+		<input type="text" name="name" value="<?php echo $result['name'];?>" >
+		<br>
+		<label>University</label>
+		<input type="text" name="university" value="<?php echo $result['university'];?>" >
+		<br>
+		<label>Branch</label>
+		<input type="text" name="branch" value="<?php echo $result['branch'];?>" >
+          <br>
+          <label>Interests</label>
+          <input type="text" name="interests" value="<?php echo $result['interests']; ?>" >
+		<br>
+		<label>Roll Number</label>
+		<input type="text" name="roll_number" value="<?php echo $result['roll_number'];?>" >
+		<br>
+		<label>Image</label>
+		<input type="file" name="featured_image" value="<?php echo $result['featured_image'];?>" >
+          <br><br>
+	     <input type="submit" name="submit" value="Submit">
+</form>
+ 
