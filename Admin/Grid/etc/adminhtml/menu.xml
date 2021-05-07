@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+   <menu>
+      <add id="Admin_Grid::menu" title="Grid Module" module="Admin_Grid" sortOrder="10" resource="Magento_Backend::content" />
+      <add id="Admin_Grid::menu_item" title="Grid Data" module="Admin_Grid" sortOrder="10" parent="Admin_Grid::menu" action="admingrid/post/index" resource="Admin_Grid::menu_item" />
+      <add id="Admin_Grid::configuration" title="Configuration" module="Admin_Grid" sortOrder="99" parent="Admin_Grid::menu" action="adminhtml/system_config/edit/section/helloworld" resource="Admin_Grid::configuration" />
+   </menu>
+</config>
